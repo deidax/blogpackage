@@ -1,11 +1,11 @@
 <?php return array(
     'root' => array(
-        'pretty_version' => '1.0.0+no-version-set',
-        'version' => '1.0.0.0',
+        'pretty_version' => 'dev-main',
+        'version' => 'dev-main',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => NULL,
+        'reference' => 'f4efaebe0dbb9467fbe1ccb4a1ed539b501f1d8a',
         'name' => 'deidax/blogpackage',
         'dev' => true,
     ),
@@ -32,12 +32,12 @@
             ),
         ),
         'deidax/blogpackage' => array(
-            'pretty_version' => '1.0.0+no-version-set',
-            'version' => '1.0.0.0',
+            'pretty_version' => 'dev-main',
+            'version' => 'dev-main',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => NULL,
+            'reference' => 'f4efaebe0dbb9467fbe1ccb4a1ed539b501f1d8a',
             'dev_requirement' => false,
         ),
         'dflydev/dot-access-data' => array(
