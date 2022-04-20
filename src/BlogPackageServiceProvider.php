@@ -12,6 +12,8 @@ class BlogPackageServiceProvider extends ServiceProvider
     $this->app->bind('calculator', function($app) {
       return new Calculator();
     });
+    
+    $this->mergeConfigFrom(__DIR__.'/../config/config.php', 'blogpackage');
   }
 
   public function boot()
@@ -22,6 +24,10 @@ class BlogPackageServiceProvider extends ServiceProvider
           InstallBlogPackage::class,
           MakeFooCommand::class,
       ]);
+
+      $this->publishes([
+        __DIR__.'/../config/config.php' => config_path('blogpackage.php'),
+      ], 'config');
     }
   }
 }
