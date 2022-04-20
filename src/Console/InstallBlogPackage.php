@@ -11,10 +11,10 @@ class InstallBlogPackage extends Command
 
     protected $description = 'Install the BlogPackage';
 
+    
     public function handle()
     {
         
-
         $this->info('Installing BlogPackage...');
 
         $this->info('Publishing configuration...');
@@ -57,6 +57,6 @@ class InstallBlogPackage extends Command
         if ($forcePublish === true) {
             $params['--force'] = true;
         }
-       $this->call('vendor:publish', $params);
+        $this->call('vendor:publish', $params);
     }
 }

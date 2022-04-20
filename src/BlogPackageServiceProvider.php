@@ -2,7 +2,7 @@
 
 namespace Deidax\BlogPackage;
 
-use Deidax\BlogPackage\Console\InstallBlogPackage;
+use Deidax\BlogPackage\Console\{InstallBlogPackage, MakeFooCommand};
 use Illuminate\Support\ServiceProvider;
 
 class BlogPackageServiceProvider extends ServiceProvider
@@ -20,7 +20,8 @@ class BlogPackageServiceProvider extends ServiceProvider
     if ($this->app->runningInConsole()) {
       $this->commands([
           InstallBlogPackage::class,
+          MakeFooCommand::class,
       ]);
-  }
+    }
   }
 }
