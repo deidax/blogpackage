@@ -1,0 +1,36 @@
+{
+    "name": "deidax/blogpackage",
+    "description": "A demo package",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Deidax\\BlogPackage\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+          "Deidax\\BlogPackage\\Tests\\": "tests"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Deidax\\BlogPackage\\BlogPackageServiceProvider"
+            ],
+            "aliases": {
+                "Calculator": "Deidax\\BlogPackage\\Facades\\Calculator"
+            }
+        }
+    },
+    "authors": [
+        {
+            "name": "Khalil Dida",
+            "email": "khalildida93@gmail.com"
+        }
+    ],
+    "require-dev": {
+        "orchestra/testbench": "^6.0",
+        "phpunit/phpunit": "^9.5"
+    }
+}
