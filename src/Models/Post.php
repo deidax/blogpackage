@@ -10,4 +10,9 @@ class Post extends Model
     use HasFactory;
 
     protected $guarded = [];
+
+    protected static function newFactory()
+    {
+        return \Deidax\BlogPackage\Database\Factories\PostFactory::new();
+    }   
 }

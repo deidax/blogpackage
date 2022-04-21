@@ -5,6 +5,8 @@ namespace Deidax\BlogPackage\Tests\Unit;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Deidax\BlogPackage\Tests\TestCase;
 use Deidax\BlogPackage\Models\Post;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Schema;
 
 class PostTest extends TestCase
 {

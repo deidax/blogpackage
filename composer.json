@@ -5,13 +5,18 @@
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "Deidax\\BlogPackage\\": "src/"
+            "Deidax\\BlogPackage\\": "src/",
+            "Deidax\\BlogPackage\\Database\\Factories\\": "database/factories"
         }
     },
     "autoload-dev": {
         "psr-4": {
           "Deidax\\BlogPackage\\Tests\\": "tests"
         }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-f": "vendor/bin/phpunit --filter"
     },
     "extra": {
         "laravel": {
