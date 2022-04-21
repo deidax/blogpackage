@@ -29,5 +29,9 @@ class BlogPackageServiceProvider extends ServiceProvider
         __DIR__.'/../config/config.php' => config_path('blogpackage.php'),
       ], 'config');
     }
+
+    $this->loadMigrationsFrom(__DIR__ . '/../database/migrations');
+
+    
   }
 }
