@@ -4,7 +4,7 @@ namespace Deidax\BlogPackage;
 
 use Deidax\BlogPackage\Console\{InstallBlogPackage, MakeFooCommand};
 use Deidax\BlogPackage\View\Components\Alert;
-use Illuminate\Routing\Route;
+use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
 
 class BlogPackageServiceProvider extends ServiceProvider
@@ -41,7 +41,7 @@ class BlogPackageServiceProvider extends ServiceProvider
 
     }
 
-    $this->loadRoutesFrom(__DIR__.'/../routes/web.php');
+    $this->registerRoutes();
     $this->loadMigrationsFrom(__DIR__ . '/../database/migrations');
     $this->loadViewsFrom(__DIR__.'/../resources/views', 'blogpackage');
 

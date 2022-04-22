@@ -20,6 +20,17 @@ class PostController extends Controller
         return view('blogpackage::posts.show', compact('post'));
     }
 
+    public function create()
+    {
+        // Let's assume we need to be authenticated
+        // to create a new post
+        if (! auth()->check()) {
+            abort (403, 'Only authenticated users can create new posts.');
+        }
+        
+        return view('blogpackage::posts.create');
+    }
+
     public function store()
     {
         // Let's assume we need to be authenticated
