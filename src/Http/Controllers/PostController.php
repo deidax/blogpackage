@@ -2,6 +2,7 @@
 
 namespace Deidax\BlogPackage\Http\Controllers;
 
+use Deidax\BlogPackage\Events\PostWasCreated;
 use Deidax\BlogPackage\Models\Post;
 
 class PostController extends Controller
@@ -52,6 +53,11 @@ class PostController extends Controller
             'body'      => request('body'),
         ]);
 
+        // Emit event
+        event(new PostWasCreated($post));
+
         return redirect(route('posts.show', $post));
     }
+
+    
 }

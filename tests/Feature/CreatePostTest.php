@@ -2,11 +2,12 @@
 
 namespace Deidax\BlogPackage\Tests\Feature;
 
+use Deidax\BlogPackage\Events\PostWasCreated;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Deidax\BlogPackage\Models\Post;
 use Deidax\BlogPackage\Tests\TestCase;
 use Deidax\BlogPackage\Tests\User;
-
+use Illuminate\Support\Facades\Event;
 class CreatePostTest extends TestCase
 {
     //use RefreshDatabase;
@@ -97,5 +98,24 @@ class CreatePostTest extends TestCase
         $this->get(route('posts.show', $post))
             ->assertSee('The single post title')
             ->assertSee('The single post body');
+    }
+
+    /** @test */
+    function an_event_is_emitted_when_a_new_post_is_created()
+    {
+        Event::fake();
+
+        $author = User::factory()->create();
+
+        $this->actingAs($author)->post(route('posts.store'), [
+            'title' => 'A valid title',
+            'body' => 'A valid body',
+        ]);
+
+        $post = Post::first();
+
+        Event::assertDispatched(PostWasCreated::class, function ($event) use ($post) {
+            return $event->post->id === $post->id;
+        });
     }
 }
