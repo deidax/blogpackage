@@ -2,5 +2,6 @@
 
 return [
   'posts_table' => 'posts',
-  // other options...
+  'prefix' => 'blogger',
+  'middleware' => ['web'], // you probably want to include 'web' here
 ];
